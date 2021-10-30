@@ -1,0 +1,41 @@
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>MaskChecker</title>
+</head>
+
+<body>
+  <style>
+    body {
+      margin: 25px;
+    }
+
+    #main {
+      position: relative;
+      margin: 50px 0;
+    }
+
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  </style>
+
+  <div id="main">
+    <video id="video" playsinline style="
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        width: auto;
+        height: auto;
+        ">
+    </video>
+    <canvas id="output"></canvas>
+  </div>
+  <button id="start-btn">start</button>
+  <button id="stop-btn">stop</button>
+</body>
+
+</html>
