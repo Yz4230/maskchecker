@@ -1,4 +1,4 @@
-const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
@@ -73,8 +73,19 @@ module.exports = {
       },
     }),
     new MiniCssExtractPlugin(),
-    isDevelopment && new ReactRefreshWebpackPlugin(),
-  ].filter(Boolean),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "weights_3000"),
+          to: path.resolve(distPath, "weights_3000"),
+        },
+        {
+          from: path.resolve(__dirname, "weights_10000"),
+          to: path.resolve(distPath, "weights_10000"),
+        },
+      ],
+    }),
+  ],
   resolve: {
     extensions: [".js", ".jsx", ".json", ".ts", ".tsx"],
   },

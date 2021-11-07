@@ -9,18 +9,26 @@
 <body>
   <style>
     body {
-      margin: 25px;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     #main {
       position: relative;
-      margin: 50px 0;
     }
 
-    canvas {
+    #output {
       position: absolute;
       top: 0;
       left: 0;
+    }
+
+    #face {
+      background-color: blue;
+      display: none;
     }
   </style>
 
@@ -34,8 +42,7 @@
     </video>
     <canvas id="output"></canvas>
   </div>
-  <button id="start-btn">start</button>
-  <button id="stop-btn">stop</button>
+  <canvas id="face"></canvas>
 </body>
 
 </html>
