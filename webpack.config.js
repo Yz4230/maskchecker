@@ -79,10 +79,6 @@ module.exports = {
           from: path.resolve(__dirname, "weights_3000"),
           to: path.resolve(distPath, "weights_3000"),
         },
-        {
-          from: path.resolve(__dirname, "weights_10000"),
-          to: path.resolve(distPath, "weights_10000"),
-        },
       ],
     }),
   ],
