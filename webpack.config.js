@@ -54,8 +54,8 @@ module.exports = {
   entry: path.join(srcPath, "index.ts"),
   output: {
     path: distPath,
-    publicPath: "/",
-    filename: "[name].[fullhash].js",
+    publicPath: isDevelopment ? "/" : "/maskchecker",
+    filename: "[name].[fullhash:5].js",
   },
   devServer: {
     static: distPath,
