@@ -1,5 +1,7 @@
 # MaskChecker 😷
 
+[![Deploy to github pages](https://github.com/Yz4230/maskchecker/actions/workflows/deploy-to-gh-pages.yaml/badge.svg?branch=main)](https://github.com/Yz4230/maskchecker/actions/workflows/deploy-to-gh-pages.yaml)
+
 MaskChecker は、ウェブカメラを利用して、マスクをしているかどうかを判定する AI です。
 
 ## Demo
