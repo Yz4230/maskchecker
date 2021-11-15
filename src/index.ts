@@ -96,13 +96,16 @@ async function main() {
         await video.play();
       });
   };
-  await startVideo();
 
   const bfModel = await blazeface.load();
   const maskModel = await tf.loadLayersModel("./weights_3000/model.json");
   // const maskModel = await tf.loadLayersModel("/weights_10000/model.json");
-  // video.addEventListener("loadeddata", () => renderPrediction(bfModel));
-  renderPrediction(bfModel, maskModel);
+  video.addEventListener("loadeddata", () =>
+    renderPrediction(bfModel, maskModel)
+  );
+
+  await startVideo();
+  // renderPrediction(bfModel, maskModel);
 }
 
 main().catch(console.error);
