@@ -46,19 +46,17 @@ async function renderPrediction(
       const start = predictions[i].topLeft as [number, number];
       const end = predictions[i].bottomRight as [number, number];
       const size = [end[0] - start[0], end[1] - start[1]];
-      if (i == 0) {
-        faceCtx.drawImage(
-          video,
-          canvas.width - (start[0] + size[0]),
-          start[1],
-          size[0],
-          size[1],
-          0,
-          0,
-          64,
-          64
-        );
-      }
+      faceCtx.drawImage(
+        video,
+        canvas.width - (start[0] + size[0]),
+        start[1],
+        size[0],
+        size[1],
+        0,
+        0,
+        64,
+        64
+      );
       const faceImageTensor = tf.browser.fromPixels(faceCanvas);
       const maskPrediction = maskModel.predict(tf.expandDims(faceImageTensor));
       if (!Array.isArray(maskPrediction)) {
